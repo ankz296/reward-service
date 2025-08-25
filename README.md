@@ -14,8 +14,16 @@ Flow: Controller → Service → Client/Repository → External System → Respo
 Swagger URL : http://localhost:8080/rewards/swagger-ui/index.html
 ![img.png](img.png)
 
-Get Rewards API:
-It calculate rewards dynamically based on current data (Mock Data) :
+Get Calculate Rewards API:
+curl --location 'http://localhost:8080/rewards/api/v1/{customerId}?activityType={activityType}'
+ - customerId - customer ID to calculate reward points
+ - activityType - any of this HOTEL,RESTAURANT,CASINO enum value we have to pass to get rewards point for specific only otherwise it will return for all
+ - Swagger Image for end Point: ![img_2.png](img_2.png)
+ - Get HTTP method
+
+Below we have all response for this API for 200, 400 and 404 
+
+It calculate rewards dynamically based on current data from Hotel, Restaurant and casino services (Mock Data) :
 Empty Activity Type:200 (OK) 
 ![img_1.png](img_1.png)
 
